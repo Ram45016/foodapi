@@ -1,0 +1,23 @@
+version: '3.7'
+services:
+  app:
+    image: food-api-v1
+    ports:
+      - "8088:8088"
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/delivery
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: Ramu@1652004
+  db:
+    image: mysql:8.0
+    environment:
+      DATABASE_HOST: docker-mysql
+      DATABASE_PORT: 3306
+      MYSQL_ROOT_PASSWORD: Ramu@1652004
+      MYSQL_DATABASE: delivery
+      MYSQL_USER: root
+      MYSQL_PASSWORD: Ramu@1652004
+
+
